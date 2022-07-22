@@ -12,6 +12,7 @@ import static io.qameta.allure.Allure.step;
 
 public class TestHWFor21lesson extends TestBase {
     @Test
+    @Disabled
     void searchTest() {
         String searchValue = "Ubuntu";
         back();

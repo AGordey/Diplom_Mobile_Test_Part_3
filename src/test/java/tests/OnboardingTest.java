@@ -1,6 +1,7 @@
 package tests;
 
 import io.appium.java_client.AppiumBy;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +11,7 @@ import static io.qameta.allure.Allure.step;
 
 public class OnboardingTest extends TestBase {
     @Test
+    @Disabled
     @DisplayName("Проверка на эмуляторе онбординга")
     void OnboardingScreenTest() {
 
