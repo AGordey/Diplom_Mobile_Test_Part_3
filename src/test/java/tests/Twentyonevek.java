@@ -14,6 +14,7 @@ import static com.codeborne.selenide.Selenide.$$;
 @Tag("21vek")
 public class Twentyonevek extends TestBase {
     @Test
+    @Disabled
     @DisplayName("Наличие элементов главной страницы")
     void searchTest() {
 
@@ -26,11 +27,12 @@ public class Twentyonevek extends TestBase {
     }
 
     @Test
+    @Disabled
     @DisplayName("Открытие вкладки Все Акции")
     void searchTest2() {
 
         $(AppiumBy.xpath("//android.view.View[@content-desc=\"Все акции\"]")).click();
-        $(AppiumBy.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.webkit.WebView/android.webkit.WebView/android.view.View/android.view.View[1]/android.view.View[1]/android.view.View[2]/android.view.View[2]")).shouldHave(text("Все акции"));
+        $$(AppiumBy.className("android.view.View")).findBy(text("Все акции")).shouldBe(visible);
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Категории")).shouldBe(visible);
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Фильтр")).shouldBe(visible);
     }
@@ -40,11 +42,12 @@ public class Twentyonevek extends TestBase {
     void searchTest3() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
-        $$(AppiumBy.className("android.view.View")).findBy(text("Каталог товаров")).shouldHave(text("Каталог товаров"));
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Каталог товаров")).shouldHave(text("Каталог товаров"));
 
     }
 
     @Test
+    @Disabled
     @DisplayName("Наличие разделов в Каталоге")
     void searchTest4() {
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
@@ -57,6 +60,7 @@ public class Twentyonevek extends TestBase {
 
     }
     @Test
+    @Disabled
     @DisplayName("Добавление товара из главной страницы в корзину")
     void searchTest5() {
         $$(AppiumBy.className("android.widget.Button")).findBy(text("В корзину")).click();

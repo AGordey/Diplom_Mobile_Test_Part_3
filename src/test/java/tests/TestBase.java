@@ -16,8 +16,7 @@ import static helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
-    static String deviceHost = System.getProperty("deviceHost", "emulation");
-//    static String deviceHost = System.getProperty("deviceHost", "browserstack");
+    static String deviceHost = System.getProperty("deviceHost", "browserstack");
 
     @BeforeAll
     public static void setup() {
