@@ -1,9 +1,7 @@
 package tests;
 
 import io.appium.java_client.AppiumBy;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,28 +9,25 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-@Tag("21vek")
 public class Twentyonevek extends TestBase {
     @Test
-    @Disabled
     @DisplayName("Наличие элементов главной страницы")
     void searchTest() {
 
         $(AppiumBy.xpath("//android.view.View[@content-desc=\"Все акции\"]/android.widget.TextView")).shouldHave(text("Все акции"));
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).shouldHave(text("Каталог"));
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Search")).shouldHave(text("Search"));
-        $$(AppiumBy.className("android.view.View")).findBy(text("ПОПУЛЯРНЫЕ ТОВАРЫ")).shouldHave(text("ПОПУЛЯРНЫЕ ТОВАРЫ"));
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("ПОПУЛЯРНЫЕ ТОВАРЫ")).shouldHave(text("ПОПУЛЯРНЫЕ ТОВАРЫ"));
         $$(AppiumBy.className("android.webkit.WebView")).findBy(text("Онлайн-гипермаркет 21vek.by")).shouldHave(text("Онлайн-гипермаркет 21vek.by"));
 
     }
 
     @Test
-    @Disabled
     @DisplayName("Открытие вкладки Все Акции")
     void searchTest2() {
 
         $(AppiumBy.xpath("//android.view.View[@content-desc=\"Все акции\"]")).click();
-        $$(AppiumBy.className("android.view.View")).findBy(text("Все акции")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Все акции")).shouldBe(visible);
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Категории")).shouldBe(visible);
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Фильтр")).shouldBe(visible);
     }
@@ -47,22 +42,24 @@ public class Twentyonevek extends TestBase {
     }
 
     @Test
-    @Disabled
     @DisplayName("Наличие разделов в Каталоге")
     void searchTest4() {
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
-        $$(AppiumBy.className("android.view.View")).findBy(text("Все акции")).shouldBe(visible);
-        $$(AppiumBy.className("android.view.View")).findBy(text("Бытовая техника")).shouldBe(visible);
-        $$(AppiumBy.className("android.view.View")).findBy(text("Смартфоны, ТВ и электроника")).shouldBe(visible);
-        $$(AppiumBy.className("android.view.View")).findBy(text("Компьютеры и периферия")).shouldBe(visible);
-        $$(AppiumBy.className("android.view.View")).findBy(text("Мебель")).shouldBe(visible);
-        $$(AppiumBy.className("android.view.View")).findBy(text("Товары для дома")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Все акции")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Бытовая техника")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Смартфоны, ТВ и электроника")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Компьютеры и периферия")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Мебель")).shouldBe(visible);
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Товары для дома")).shouldBe(visible);
 
     }
+
     @Test
-    @Disabled
     @DisplayName("Добавление товара из главной страницы в корзину")
     void searchTest5() {
+
+
+        $$(AppiumBy.className("android.view.View")).findBy(text("Подгузники-трусики детские Pampers Pants 5 Junior (150шт)")).click();
         $$(AppiumBy.className("android.widget.Button")).findBy(text("В корзину")).click();
         $$(AppiumBy.className("android.widget.TextView")).findBy(text("1")).shouldBe(visible);
 
