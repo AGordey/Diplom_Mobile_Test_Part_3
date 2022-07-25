@@ -9,7 +9,6 @@
 - <a href="#electric_plug-сборка-в-Jenkins">Сборка в Jenkins</a>
 - <a href="#arrow_forward-запуск-из-терминала">Запуск из терминала</a>
 - <a href="#open_book-allure-отчет">Allure отчет</a>
-- <a href="#hammer-allure-test-ops-отчет">Allure Test Ops отчет</a>
 - <a href="#film_projector-видео-примеры-прохождения-тестов">Видео с примером прохождения теста авторизации</a>
 
 ## :computer: Технологии и инструменты
