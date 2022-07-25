@@ -36,8 +36,6 @@
         State6: Jenkins
         State7: Selenoid
         State8: Allure Report
-        State9: Telegram
-        State10: STOP
         State1 --> State2
         State2 --> State3
         State3 --> State4
@@ -51,10 +49,8 @@
         note left of State3 : Фреймворки
         note right of State4 : Сборка проекта
         note left of State5 : Система контроля версий и хостинг проекта
-        note right of State6 : Параметризация и запуск сборки
-        note left of State7 : Контейнеризация
-        note right of State8 : Отчётность
-        note left of State9 : Уведомления
+        note left of State6 : Контейнеризация
+        note right of State7 : Отчётность
 ```
 
 ## :notebook_with_decorative_cover: Реализованные проверки
@@ -90,7 +86,7 @@ test
 
 - ### Страница с проведенными тестами
 <p align="center">
-<img title="Allure Test Page" src="iimages/screenshots/All testcases.png">
+<img title="Allure Test Page" src="images/screenshots/All testcases.png">
 </p>
 
 
