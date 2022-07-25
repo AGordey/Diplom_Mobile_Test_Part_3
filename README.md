@@ -37,7 +37,6 @@
         State7: Selenoid
         State8: Allure Report
         State9: Telegram
-        State10: STOP
         State1 --> State2
         State2 --> State3
         State3 --> State4
@@ -46,7 +45,6 @@
         State6 --> State7
         State7 --> State8
         State8 --> State9
-        State9 --> State10
         note right of State2 : Работа с кодом
         note left of State3 : Фреймворки
         note right of State4 : Сборка проекта
