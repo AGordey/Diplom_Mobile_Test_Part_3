@@ -37,7 +37,7 @@ public class Twentyonevek extends TestBase {
     void searchTest3() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
-        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Каталог товаров")).shouldHave(text("Каталог товаров"));
+        $$(AppiumBy.className("android.widget.TextView")).findBy(text("Каталог товаров")).shouldBe(visible);
 
     }
 
