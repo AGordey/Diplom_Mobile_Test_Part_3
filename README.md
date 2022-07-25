@@ -43,7 +43,6 @@
         State5 --> State6
         State6 --> State7
         State7 --> State8
-        State8 --> State9
         note right of State2 : Работа с кодом
         note left of State3 : Фреймворки
         note right of State4 : Сборка проекта
