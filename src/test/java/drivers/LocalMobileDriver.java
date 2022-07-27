@@ -43,17 +43,13 @@ public class LocalMobileDriver implements WebDriverProvider {
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("com.twentyonevek");
         options.setAppActivity("com.twentyonevek.MainActivity");
-//        options.setAppPackage("org.wikipedia.alpha");
-//        options.setAppActivity("org.wikipedia.main.MainActivity");
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
     private File getApp() {
         String appUrl = "https://cloud.mail.ru/public/3LyY/5mQ9kAB9X";
-//        String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk";
         String appPath = "src/test/resources/apps/21vek (1.6.9).apk";
-//        String appPath = "src/test/resources/apps/app-alpha-universal-release.apk";
 
         File app = new File(appPath);
         if (!app.exists()) {
