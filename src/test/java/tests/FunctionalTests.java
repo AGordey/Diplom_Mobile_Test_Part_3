@@ -38,7 +38,7 @@ public class FunctionalTests extends TestBase {
 
     @Test
     @DisplayName("Открытие вкладки Каталог")
-    void tabCatalogTest() {
+    void tabOpenCatalogTest() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
         $$(AppiumBy.className("android.widget.TextView")).findBy(text("Каталог товаров")).shouldBe(visible);
@@ -46,7 +46,7 @@ public class FunctionalTests extends TestBase {
 
     @Test
     @DisplayName("Наличие разделов в Каталоге")
-    void sectionInCatalogTest() {
+    void existSectionInCatalogTest() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
         $$(AppiumBy.className("android.widget.TextView")).findBy(text("Все акции")).shouldBe(visible);
