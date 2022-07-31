@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class Tests extends TestBase {
+public class FunctionalTests extends TestBase {
     @Test
     @DisplayName("Наличие элементов главной страницы")
     void elementsOnMainPageTest() {
@@ -38,7 +38,7 @@ public class Tests extends TestBase {
 
     @Test
     @DisplayName("Открытие вкладки Каталог")
-    void tabCatalogTest() {
+    void tabOpenCatalogTest() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
         $$(AppiumBy.className("android.widget.TextView")).findBy(text("Каталог товаров")).shouldBe(visible);
@@ -46,7 +46,7 @@ public class Tests extends TestBase {
 
     @Test
     @DisplayName("Наличие разделов в Каталоге")
-    void sectionInCatalogTest() {
+    void existSectionInCatalogTest() {
 
         $$(AppiumBy.className("android.widget.Button")).findBy(text("Каталог")).click();
         $$(AppiumBy.className("android.widget.TextView")).findBy(text("Все акции")).shouldBe(visible);

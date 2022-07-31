@@ -19,16 +19,17 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalMobileDriver implements WebDriverProvider {
 
+    static EnviromentConfig configModelMobile = ConfigFactory
+            .create(EnviromentConfig.class, System.getProperties());
+
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config2.HostUrl());
+            return new URL(configModelMobile.HostUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    static EnviromentConfig config2 = ConfigFactory
-            .create(EnviromentConfig.class, System.getProperties());
 
     @Override
     public WebDriver createDriver(Capabilities capabilities) {
@@ -38,8 +39,8 @@ public class LocalMobileDriver implements WebDriverProvider {
         options.merge(capabilities);
         options.setAutomationName(AutomationName.ANDROID_UIAUTOMATOR2);
         options.setPlatformName("Android");
-        options.setDeviceName(config2.DeviceName());
-        options.setPlatformVersion(config2.PlatformVersion());
+        options.setDeviceName(configModelMobile.DeviceName());
+        options.setPlatformVersion(configModelMobile.PlatformVersion());
         options.setApp(app.getAbsolutePath());
         options.setAppPackage("com.twentyonevek");
         options.setAppActivity("com.twentyonevek.MainActivity");

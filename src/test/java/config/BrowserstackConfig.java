@@ -3,7 +3,7 @@ package config;
 import org.aeonbits.owner.Config;
 @Config.Sources ({
       // "system:properties",
-        "classpath:BrowserStackMobileDriver.properties"
+        "classpath:browserStackMobileDriver.properties"
 })
 public interface BrowserstackConfig extends Config {
 
@@ -20,7 +20,7 @@ public interface BrowserstackConfig extends Config {
     String appinbrowserstack();
 
     @Key("projectinbrowserstack")
-    @DefaultValue("QA.GURU lesson 21 Andrey G")
+    @DefaultValue("Congratulation work by AGordey")
     String projectinbrowserstack();
 
     @Key("buildinbrowserstack")
