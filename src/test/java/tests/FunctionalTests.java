@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
-public class Tests extends TestBase {
+public class FunctionalTests extends TestBase {
     @Test
     @DisplayName("Наличие элементов главной страницы")
     void elementsOnMainPageTest() {

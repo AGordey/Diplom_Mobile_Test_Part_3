@@ -16,7 +16,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     static BrowserstackConfig config = ConfigFactory
             .create(BrowserstackConfig.class, System.getProperties());
-    static EnviromentConfig config2 = ConfigFactory
+    static EnviromentConfig configModelMobile = ConfigFactory
             .create(EnviromentConfig.class, System.getProperties());
     @Override
 
@@ -30,8 +30,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         // Set URL of the application under test
         mutableCapabilities.setCapability("app", config.appinbrowserstack());
         // Specify device and os_version for testing
-        mutableCapabilities.setCapability("device", config2.DeviceName());
-        mutableCapabilities.setCapability("os_version", config2.PlatformVersion());
+        mutableCapabilities.setCapability("device", configModelMobile.DeviceName());
+        mutableCapabilities.setCapability("os_version", configModelMobile.PlatformVersion());
 
         // Set other BrowserStack capabilities
         mutableCapabilities.setCapability("project", config.projectinbrowserstack());
@@ -42,7 +42,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL(config2.HostUrl());
+            return new URL(configModelMobile.HostUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
